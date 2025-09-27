@@ -1,5 +1,6 @@
 import { Link } from "expo-router";
-import React from "react";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import React, { useState } from 'react';
 import {
   Image,
   KeyboardAvoidingView,
@@ -10,29 +11,44 @@ import {
   View,
 } from "react-native";
 export default function Home() {
+  const [senha, setSenha] = useState(""); 
+  const [olho, setOlho] = useState(true);
+
   return (
     <KeyboardAvoidingView behavior="padding">
-      <View style={x.container}>
-        <View style={x.im}>
+      <View style={style.container}>
+        <View style={style.im}>
           <Image
-            style={x.im}
+            style={style.im}
             source={{
               uri: "https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/c8e022812ace82fba41b34f53d895ad0",
             }}
           />
         </View>
-        <Text style={x.login}>Faça login</Text>
-        <View style={x.input}>
-          <TextInput style={x.imput} placeholder="USUÁRIO"></TextInput>
-          <TextInput style={x.imput} placeholder="SENHA"></TextInput>
-          <View style={x.but}>
+        <Text style={style.login}>Faça login</Text>
+        <View style={style.input}>
+          <TextInput style={style.imput} placeholder="USUÁRIO"></TextInput>
+          <TextInput style={style.imput} placeholder="SENHA"  
+           value={senha}
+            onChangeText={setSenha}
+            secureTextEntry={olho}>
+              <TouchableOpacity onPress={() => setOlho(!olho)} style={style.icone}>
+            <FontAwesome
+              name={olho ? "eye" : "eye-slash"}
+              size={34}
+              color="black"
+              
+            />
+          </TouchableOpacity>
+            </TextInput>
+          <View style={style.but}>
             <TouchableOpacity>
-              <Text style={x.text}>ACESSAR</Text>
-              <Link href={"./start/Home"}></Link>
+              <Text style={style.text}>ACESSAR</Text>
+              <Link href={"/(tabs)/start/Home"}></Link>
             </TouchableOpacity>
             <View>
               <TouchableOpacity>
-                <Link href={"/Criar"} style={x.criar}>
+                <Link href={"/Criar"} style={style.criar}>
                   Criar conta
                 </Link>
               </TouchableOpacity>
@@ -44,7 +60,7 @@ export default function Home() {
   );
 }
 
-const x = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
@@ -99,5 +115,11 @@ const x = StyleSheet.create({
   criar: {
     top: "350%",
     color: "blue",
+  },
+    icone:{ 
+    width: 30,
+    height: 30,
+    left: "30%",
+    marginBottom: -20
   },
 });
