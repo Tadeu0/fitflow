@@ -28,7 +28,7 @@ export default function Home() {
           <View style={x.but}>
             <TouchableOpacity>
               <Text style={x.text}>ACESSAR</Text>
-              <Link href={"/(tabs)/start/Home"}></Link>
+              <Link href={"./start/Home"}></Link>
             </TouchableOpacity>
             <View>
               <TouchableOpacity>

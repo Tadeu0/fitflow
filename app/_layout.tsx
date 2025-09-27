@@ -12,7 +12,8 @@ export default function RootLayout() {
         options={{ title: "Home", headerTransparent: true, headerShown: false }}
       />
       <Stack.Screen name="Criar" options={{ title: "Criar Conta" }} />
-      <Stack.Screen name=" Home" options={{ title: "Home" }} />
+      <Stack.Screen name=" Home" options={{headerTransparent:  true,headerShown: false}} />
+      <Stack.Screen name="(tabs)" options={{headerTransparent:  true,headerShown: false}} />
     </Stack>
   );
-}
+} 
