@@ -32,14 +32,7 @@ export default function Home() {
            value={senha}
             onChangeText={setSenha}
             secureTextEntry={olho}>
-              <TouchableOpacity onPress={() => setOlho(!olho)} style={style.icone}>
-            <FontAwesome
-              name={olho ? "eye" : "eye-slash"}
-              size={34}
-              color="black"
               
-            />
-          </TouchableOpacity>
             </TextInput>
           <View style={style.but}>
             <TouchableOpacity>
