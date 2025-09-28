@@ -9,31 +9,94 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  ScrollView
 } from "react-native";
 export default function Home() {
   const [senha, setSenha] = useState(""); 
   const [olho, setOlho] = useState(true);
 
+  // const [inp, setinp] = useState(0); 
+  // const [inp2, setinp2] = useState(0); 
+  // const [most, setmost] = useState(0); 
+
+  // const cal = () => {
+  //   const res = inp/inp2
+  //   setmost(res)
+  //}
+
   return (
-    <KeyboardAvoidingView behavior="padding" style={style.container}>
-     
-      
+     <View style={style.container}>
+        <View style={style.estrimagem}>
           <Image
-           
+           style={style.image}
             source={{
               uri: "https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/c8e022812ace82fba41b34f53d895ad0",
             }}
           />
+         </View>
+         <KeyboardAvoidingView behavior="padding" style={style.estru}>
+            <ScrollView style={style.containerprincipal}>
+            {/* Input */}
+            <View style={style.input}>
+            <TextInput style={style.inpu}  placeholder="Usuário" ></TextInput>
+            <TextInput style={style.inpu}  placeholder="Senha" keyboardType="numeric" ></TextInput>
+            </View>
+            </ScrollView>
+         </KeyboardAvoidingView>
+</View>
 
-    </KeyboardAvoidingView>
   );
 }
 
 const style = StyleSheet.create({
   container: {
-    justifyContent: "center",
+    flex: 1,
     alignItems: "center",
-    backgroundColor: "white" ,
+    justifyContent: "center",
+    backgroundColor: "#DCDCDC"
+  },
+  estrimagem:{
+  width: "40%",
+  height: "20%",
+  borderRadius: 10,
+  elevation: 14,
+  marginTop: "20%",
+  marginBottom: "-45%"
+  },
+  image:{
+   width: "100%",
+   height: "100%",
+   borderRadius: 15,
+  },
+  estru:{
+    backgroundColor: "white",
+    width: "99%",
+    height: "80%",
+    marginTop: "55%",
+    borderRadius: 30,
+    
+  },
+  containerprincipal:{
+    backgroundColor: "white",
+    borderRadius: 30,
+    
+  },
+  input:{
+    width: "70%",
+    height: "80%",
+    backgroundColor: "tarsparent",
+    marginLeft: "15%",
+    marginTop: '40%',
+    alignItems: "center",
+    justifyContent: "center",
+    
+  },
+  inpu:{
+    borderWidth: 1,
+    width: "100%",
+    textAlign: "center",
+    borderRadius: 10,
+    marginBottom: 10
   },
   // image: {
   //   width: "65%",
