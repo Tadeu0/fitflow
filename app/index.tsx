@@ -1,28 +1,18 @@
-import { Link } from "expo-router";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Link } from "expo-router";
 import React, { useState } from 'react';
 import {
   Image,
   KeyboardAvoidingView,
+  ScrollView,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
-  View,
-  ScrollView
+  View
 } from "react-native";
-export default function Home() {
+export default function Inicio() {
   const [senha, setSenha] = useState(""); 
   const [olho, setOlho] = useState(true);
-
-  // const [inp, setinp] = useState(0); 
-  // const [inp2, setinp2] = useState(0); 
-  // const [most, setmost] = useState(0); 
-
-  // const cal = () => {
-  //   const res = inp/inp2
-  //   setmost(res)
-  //}
 
   return (
      <View style={style.container}>
@@ -39,7 +29,23 @@ export default function Home() {
             {/* Input */}
             <View style={style.input}>
             <TextInput style={style.inpu}  placeholder="Usuário" ></TextInput>
-            <TextInput style={style.inpu}  placeholder="Senha" keyboardType="numeric" ></TextInput>
+            <TextInput style={style.inpu}  placeholder="Senha" keyboardType="numeric" 
+            value={senha}
+            onChangeText={setSenha}
+            secureTextEntry={olho}
+            ></TextInput>
+            <TouchableOpacity onPress={() => setOlho(!olho)}>
+            <FontAwesome
+            name={olho ? "eye-slash" : "eye" }
+            size={34}
+            color="black"
+            style={style.eye}
+                   />
+              </TouchableOpacity>
+              {/* Botao */}
+              <TouchableOpacity style={style.bot}>
+              <Link href={"/(tabs)/start/Home"}>Acessar</Link>
+              </TouchableOpacity>
             </View>
             </ScrollView>
          </KeyboardAvoidingView>
@@ -86,7 +92,7 @@ const style = StyleSheet.create({
     height: "80%",
     backgroundColor: "tarsparent",
     marginLeft: "15%",
-    marginTop: '40%',
+    marginTop: '50%',
     alignItems: "center",
     justifyContent: "center",
     
@@ -97,6 +103,19 @@ const style = StyleSheet.create({
     textAlign: "center",
     borderRadius: 10,
     marginBottom: 10
+  },
+  eye:{
+    marginTop: -48,
+    marginLeft: '85%'
+  },
+  bot:{
+    width: "100%",
+    height: "15%",
+    backgroundColor: "green",
+    marginTop: '15%',
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
   // image: {
   //   width: "65%",

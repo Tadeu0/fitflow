@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-export default function Home() {
+export default function Criar() {
   const [senha, setSenha] = useState(""); 
   const [olho, setOlho] = useState(true);
 

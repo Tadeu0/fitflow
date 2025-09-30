@@ -1,22 +1,11 @@
 import { Stack } from "expo-router";
 
-export default function RootLayout() {
-  return (
-     <Stack
-   screenOptions={{
-    headerBackTitle:"#000",
-    headerTitleAlign: "center",
-    
-   }}
-   >
-      
-      <Stack.Screen
-        name="index"
-        options={{ title: "Home", headerTransparent: true, headerShown: false }}
-      />
-      <Stack.Screen name="Criar" options={{ title: "Criar Conta" }} />
-      <Stack.Screen name=" Home" options={{headerTransparent:  true,headerShown: false}} />
-      <Stack.Screen name="(tabs)" options={{headerTransparent:  true,headerShown: false}} />
+export default function Rotas(){
+  return(
+    <Stack>
+      <Stack.Screen name="index" options={{title:"Login", headerTransparent: true, headerShown: false}}/>
+      <Stack.Screen name="criar" options={{title:"Criar uma conta", headerBackTitle: "center"}}/>
+      <Stack.Screen name="(tabs)" options={{headerShown: false}} />
     </Stack>
-  );
-} 
+  )
+}
