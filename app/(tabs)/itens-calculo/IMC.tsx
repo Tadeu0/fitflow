@@ -2,19 +2,35 @@ import React, { useState } from 'react';
 import {
     StyleSheet,
     Text,
-    TextInput,
+    TextInput, 
     TouchableOpacity,
     View
 } from "react-native";
 export default function Home() {
-  const [peso,setpeso] = useState (0) // setpeso => adiciona algo na var peso
+  const [peso,setpeso] = useState (0) 
   const [altura,setaltura] = useState (0)
-  const [imc, setimc] = useState (0)
+  const [imc, setimc] = useState ("")
 
   //Calculando imc
   function calculo() {
     const resultado = Math.ceil(peso/(altura*altura))
-    setimc(resultado)
+    if (resultado < 18){
+      setimc("A media é: "+resultado+ "Entãovocêesta no nivel" )
+    }
+    if (resultado > 18 && resultado <= 24){
+      setimc("Resultado é: "+resultado+"  Peso normal" )
+    }
+    if(resultado >= 25 && resultado <= 29){
+      setimc("Resultado é: "+resultado+"  Excesso de peso"  )
+    }
+    if(resultado >=30 && resultado <=34){
+      setimc("Resultado é: "+resultado+"  Obesidade classe 1  " )
+    }
+     if(resultado >=35 && resultado <=39){
+      setimc("Resultado é: "+resultado+"  Obesidade classe 2   " )
+    } if(resultado > 40){
+      setimc("Resultado é: "+resultado+"  Obesidade classe 3  " )
+    }
   }
 return (
      <View style={style.container}>
@@ -25,7 +41,7 @@ return (
             onChangeText={(texto) => setpeso(Number(texto))}
             ></TextInput>
             <TextInput 
-            placeholder="Qual sua altura (m)"
+            placeholder="Qual sua altura (cm)"
              keyboardType="numeric" 
               onChangeText={(texto) => setaltura(Number(texto))}
              ></TextInput>

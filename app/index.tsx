@@ -6,6 +6,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
   View
@@ -44,7 +45,7 @@ export default function Inicio() {
               </TouchableOpacity>
               {/* Botao */}
               <TouchableOpacity style={style.bot}>
-              <Link href={"/(tabs)/start/Home"}>Acessar</Link>
+              <Link href={"/(tabs)/start/Home"} style={style.link}>Acesssar</Link>
               </TouchableOpacity>
             </View>
             </ScrollView>
@@ -117,19 +118,15 @@ const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // image: {
-  //   width: "65%",
-  //   height: "50%",
-  //   borderRadius: 10,
-  //   elevation: 10,
-  // },
-  // im: {
-  //   width: "70%",
-  //   height: "45%",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  // },
+  link:{
+    width:"100%",
+    height: "100%",
+    textAlign: "center",
+    textAlignVertical: "center",
+    color: "white",
+    fontSize: 30,
 
+  },
 });
 
 
