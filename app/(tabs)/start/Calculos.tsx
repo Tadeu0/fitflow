@@ -14,9 +14,7 @@ export default function Home() {
 
   return (
     <KeyboardAvoidingView style={{flex: 1}} behavior="padding">
- <TouchableOpacity>
-    <Link href={"/(tabs)/itens-calculo/IMC"} style={{width: "100%"}}><Text>Acessar</Text></Link>
- </TouchableOpacity>
+ 
     </KeyboardAvoidingView>
   );
 }

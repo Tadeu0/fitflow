@@ -43,10 +43,22 @@ export default function Inicio() {
             style={style.eye}
                    />
               </TouchableOpacity>
+              {/* Esqueci senha */}
+              <TouchableOpacity>
+              <Link href={"/Criar"} style={style.esq}>Esqueci a senha</Link>
+              </TouchableOpacity>
+
               {/* Botao */}
               <TouchableOpacity style={style.bot}>
               <Link href={"/(tabs)/start/Home"} style={style.link}>Acesssar</Link>
               </TouchableOpacity>
+
+              {/* Criar conta */}
+              <View style={style.estruesq}>
+                <Text style={{fontWeight: "bold", fontSize: 18}}>Não tem conta?</Text>
+                <TouchableOpacity><Text style={{fontWeight: "bold", fontSize: 18, color: "blue"}}>Criar conta</Text></TouchableOpacity>
+              </View>
+
             </View>
             </ScrollView>
          </KeyboardAvoidingView>
@@ -126,6 +138,19 @@ const style = StyleSheet.create({
     color: "white",
     fontSize: 30,
 
+  },
+  esq:{
+    color: "blue",
+    fontWeight: "bold",
+    marginLeft: '50%',
+  },
+  estruesq:{
+    backgroundColor: "",
+    height: 25,
+    width: '96%',
+    flexDirection: 'row',
+    top: 30,
+    justifyContent: "space-around"
   },
 });
 
