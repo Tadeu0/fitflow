@@ -15,7 +15,7 @@ export default function Rotas(){
           marginLeft: 15,
           borderRadius: 50,
           elevation: 10,
-
+         
         }
         
     }}

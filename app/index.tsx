@@ -14,7 +14,19 @@ import {
 export default function Inicio() {
   const [senha, setSenha] = useState(""); 
   const [olho, setOlho] = useState(true);
+  const [usuario, setusuario] = useState('');
+  const [errousuario, seterrousuario] = useState('');
 
+  function validar(){
+    const temNumero = /\d/.test(usuario)
+    if (!temNumero ){
+      seterrousuario('É necessário ter pelo menos um numero')
+    }
+    else if (usuario === ''){
+      seterrousuario("Campo obrigatorio")
+
+    }
+  }
   return (
      <View style={style.container}>
         <View style={style.estrimagem}>
@@ -29,10 +41,12 @@ export default function Inicio() {
             <ScrollView style={style.containerprincipal}>
             {/* Input */}
             <View style={style.input}>
-            <TextInput style={style.inpu}  placeholder="Usuário" ></TextInput>
+            <TextInput style={style.inpu}  placeholder="Usuário" onChangeText={setusuario}></TextInput>
+            <Text style={{backgroundColor: "red",}}>{errousuario}</Text>
             <TextInput style={style.inpu}  placeholder="Senha" keyboardType="numeric" 
             value={senha}
             onChangeText={setSenha}
+            
             secureTextEntry={olho}
             ></TextInput>
             <TouchableOpacity onPress={() => setOlho(!olho)}>
@@ -49,14 +63,14 @@ export default function Inicio() {
               </TouchableOpacity>
 
               {/* Botao */}
-              <TouchableOpacity style={style.bot}>
-              <Link href={"/(tabs)/start/Home"} style={style.link}>Acesssar</Link>
+              <TouchableOpacity style={style.bot} onPress={validar} >
+              {/* <Link href={"/(tabs)/start/Home"} style={style.link}>Acesssar</Link> */}
               </TouchableOpacity>
 
               {/* Criar conta */}
               <View style={style.estruesq}>
                 <Text style={{fontWeight: "bold", fontSize: 18}}>Não tem conta?</Text>
-                <TouchableOpacity><Text style={{fontWeight: "bold", fontSize: 18, color: "blue"}}>Criar conta</Text></TouchableOpacity>
+                <TouchableOpacity><Link href={"/Criar"} style={{fontWeight: "bold", fontSize: 18, color: "blue"}}>Criar conta</Link></TouchableOpacity>
               </View>
 
             </View>
@@ -153,42 +167,3 @@ const style = StyleSheet.create({
     justifyContent: "space-around"
   },
 });
-
-
-
-        // <Text style={style.login}>Faça login</Text>
-        // <View style={style.input}>
-        //   <TextInput style={style.imput} placeholder="USUÁRIO"></TextInput>
-        //       <FontAwesome
-        //       name={olho ? "eye-slash" : "eye" }
-        //       size={34}
-        //       color="black"
-        //     />
-        //   <TextInput style={style.imput} placeholder="SENHA"  
-        //    value={senha}
-        //     onChangeText={setSenha}
-        //     secureTextEntry={olho}>
-              
-        //     </TextInput>
-
-        //      <TouchableOpacity onPress={() => setOlho(!olho)} style={style.icon}>
-        //     <FontAwesome
-        //       name={olho ? "eye-slash" : "eye" }
-        //       size={34}
-        //       color="black"
-        //     />
-        //   </TouchableOpacity> */}
-        //   <View style={style.but}>
-        //     <TouchableOpacity>
-        //       <Text style={style.text}>ACESSAR</Text>
-        //       <Link href={"/(tabs)/start/Home"}></Link>
-        //     </TouchableOpacity>
-        //     <View>
-        //       <TouchableOpacity>
-        //         <Link href={"/Criar"} style={style.criar}>
-        //           Criar conta
-        //         </Link>
-        //       </TouchableOpacity>
-        //     </View>
-        //   </View>
-        // </View>
