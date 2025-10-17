@@ -184,8 +184,8 @@ const style = StyleSheet.create({
   },
   bot: {
     width: "100%",
-    height: "15%",
-    backgroundColor: "green",
+    height: "10%",
+    backgroundColor: "black",
     marginTop: '15%',
     borderRadius: 10,
     alignItems: "center",
@@ -197,7 +197,7 @@ const style = StyleSheet.create({
     textAlign: "center",
     textAlignVertical: "center",
     color: "white",
-    fontSize: 30,
+    fontSize: 25,
   },
   esq: {
     color: "blue",

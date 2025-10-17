@@ -9,7 +9,7 @@ export default function Bot() {
 
   return (
     <View style={style.container}>
-
+      <Text>em preve essa função estara pronta </Text>
     </View>
   );
 }
@@ -19,6 +19,7 @@ container:{
   backgroundColor: "",
   flex: 1,
   alignItems: "center",
+  justifyContent: 'center',
 },
 titulo:{
   marginTop: "25%",

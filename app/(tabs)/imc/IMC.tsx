@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import {
-    StyleSheet,
-    Text,
-    TextInput, 
-    TouchableOpacity,
-    View
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from "react-native";
 export default function Home() {
   const [peso,setpeso] = useState (0) 
@@ -33,24 +34,32 @@ export default function Home() {
     }
   }
 return (
-     <View style={style.container}>
+<View style={style.container}>
 
-            <TextInput 
-            placeholder="Qual o seu peso(kg)" 
+  
+   
+
+           <TextInput 
+           placeholder="Qual o seu peso(kg)" 
+           keyboardType="numeric" 
+           onChangeText={(texto) => setpeso(Number(texto))}
+           style={style.input}
+           ></TextInput>
+           <TextInput 
+           placeholder="Qual sua altura (cm)"
             keyboardType="numeric" 
-            onChangeText={(texto) => setpeso(Number(texto))}
+             onChangeText={(texto) => setaltura(Number(texto))}
+             style={style.input}
             ></TextInput>
-            <TextInput 
-            placeholder="Qual sua altura (cm)"
-             keyboardType="numeric" 
-              onChangeText={(texto) => setaltura(Number(texto))}
-             ></TextInput>
 
-            <TouchableOpacity
-            onPress={calculo}
-            ><Text>Calcular</Text></TouchableOpacity>
-            <Text>{imc}</Text>
-            
+           <TouchableOpacity
+           onPress={calculo}
+           style={style.botao}
+           ><Text style={{color: 'white', fontWeight: 'bold'}}>Calcular</Text></TouchableOpacity>
+           <Text>{imc}</Text>
+
+    
+  
 
 </View>
 
@@ -64,4 +73,21 @@ const style = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#DCDCDC"
   },
+  input:{
+    borderWidth: 0.5,
+    borderRadius: 20,
+    width: '70%',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  botao:{
+    backgroundColor: 'black',
+    borderRadius: 20,
+    width: '50%',
+    height: 40,
+    marginBottom: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 })
+
