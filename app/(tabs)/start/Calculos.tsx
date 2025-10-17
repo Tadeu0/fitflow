@@ -9,7 +9,10 @@ export default function Home() {
 
   return (
     <View style={style.container}>
-      <Text style={style.titulo}>Calculos de medição para saúde</Text>
+    <View style={style.Topo}>
+      <Text style={{fontSize: 24, fontWeight: "bold",color:"black"}}>Calculos de medição para saúde
+    </Text>
+    </View>
     <ScrollView style={style.scroll}>
       <View></View>
       <View></View>
@@ -34,5 +37,13 @@ scroll:{
   backgroundColor: "blue",
   width: "90%",
   marginTop: 40
+},
+Topo:{
+  backgroundColor: 'white',
+  height: 80,
+  alignItems: 'center',
+  justifyContent: 'center',
+  elevation: 10,
+  width: '100%',
 },
 });
