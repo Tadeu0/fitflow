@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "expo-router";
 import {
   Image,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -11,7 +10,7 @@ import {
 export default function Home() {
 
   return (
-    <SafeAreaView style={{alignItems: 'center'}}>
+    <View style={{alignItems: 'center'}}>
    <View style={style.Topo}><Text style={{fontSize: 34, fontWeight: "bold",color:"black"}}>Inicio</Text>
    
    </View>
@@ -19,11 +18,13 @@ export default function Home() {
     
     
     <Text style={{fontSize: 24, fontWeight: "bold",color:"black", marginBottom: -50, top: 5}}>Alimentações :</Text>
+    
     <Image
    style={style.imagem}
    source={{
      uri: "https://snack-code-uploads.s3.us-west-1.amazonaws.com/~asset/9e25e2dba69e62b0e2563a6500e5fbad",
    }}/>
+   
       
       <Text style={{fontSize: 24, fontWeight: "bold",color:"black", marginBottom: -50, top: 5}}>Excercísios físicos :</Text>
       <Image
@@ -33,9 +34,10 @@ export default function Home() {
     }}/>
 
 
+
     
    </ScrollView>
-</SafeAreaView>
+</View>
 
   )
 }

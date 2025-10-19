@@ -8,8 +8,12 @@ export default function Rotas(){
        headerTitleStyle:{
         fontSize: 25, 
         fontWeight: "bold"
+        },}}/>
+        <Stack.Screen name="redefinir" options={{title:"Redifiner Senha", headerTitleAlign: "center",
+       headerTitleStyle:{
+        fontSize: 25, 
+        fontWeight: "bold"
         },
-        
         }}/>
       <Stack.Screen name="(tabs)/start" options={{headerShown: false, headerTransparent: true}} />
       <Stack.Screen name="(tabs)" options={{headerShown: false, headerTransparent: true}} />

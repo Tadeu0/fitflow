@@ -108,7 +108,7 @@ export default function Inicio() {
 
             {/* Esqueci senha */}
             <TouchableOpacity>
-              <Link href={"/Criar"} style={style.esq}>Esqueci a senha</Link>
+              <Link href={"/redefinir"} style={style.esq}>Esqueci a senha</Link>
             </TouchableOpacity>
 
             {/* Botão acessar */}
