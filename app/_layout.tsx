@@ -15,7 +15,7 @@ export default function Rotas(){
         fontWeight: "bold"
         },
         }}/>
-      <Stack.Screen name="(tabs)/start" options={{headerShown: false, headerTransparent: true}} />
+      
       <Stack.Screen name="(tabs)" options={{headerShown: false, headerTransparent: true}} />
     </Stack>
   )

@@ -1,5 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
-import { Background } from '@react-navigation/elements';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Tabs } from "expo-router";
 
 export default function Rotas(){
@@ -8,14 +7,8 @@ export default function Rotas(){
     screenOptions={{
         tabBarActiveTintColor: "#000",
         tabBarStyle: {
-          bottom: 20,
-          backgroundColor: "#bebebeff",
-          height: 30,
-          width: "90%",
-          marginLeft: 15,
-          borderRadius: 50,
-          elevation: 10,
-         
+          backgroundColor: "#333333ff",
+          height: '10%',
         }
         
     }}
@@ -41,13 +34,13 @@ export default function Rotas(){
     }
  }}/>
 
-<Tabs.Screen name="bot" options={{title:"Bate papo",
+<Tabs.Screen name="bot" options={{title:"ChatBot",
     headerShown: false, 
     tabBarIcon: ({focused, color, size}) => {
       if (focused) {
-        return<Ionicons name="home-outline" size={24} color="blue" /> 
+        return<MaterialCommunityIcons name="robot" size={24} color="blue" /> 
       }
-      return <Ionicons name="home-outline" size={24} color={color} />
+      return <MaterialCommunityIcons name="robot" size={24} color={color} />
     }
  }}/>
  
